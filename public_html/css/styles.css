@@ -1,0 +1,233 @@
+/**
+ * styles.css
+ *
+ * Computer Science 50
+ * Problem Set 8
+ *
+ * Global CSS.
+ */
+
+/* allow map to fill viewport */
+html, body, #map-canvas, .container-fluid
+{
+    /* height of these elements */
+    height: 100%;
+
+    /* no margin around these elements */
+    margin: 0;
+
+    /* disable scrollbars */
+    overflow: hidden;
+
+    /* no padding within these elements */
+    padding: 0;
+}
+
+/* align form to right of pan control */
+#menu
+{
+    /* distance from left edge of viewport */
+    left: 100px;
+
+    /* position form "absolutely" where we want it */
+    position: absolute;
+
+    /* distance from top edge of viewport */
+    top: 28px;
+    height: 90%;
+    width:200px;
+    overflow:hidden;
+    transition: height 1s ease-in-out, top 1.5s ease-in-out;
+}
+
+#right_menu
+{
+    right:100px;
+     position: absolute;
+    top: 28px;
+    height: 20px;
+    width:200px;
+    overflow:hidden;
+    background-color: rgba(255,255,255,0.5);
+    transition: height 1s ease-in-out, top 1.5s ease-in-out;
+}
+
+#top-left, #top-left-right
+{
+    width:50%;
+    float:left;
+    height:20px;
+    background-color: rgba(0,0,128,0.5);
+    overflow:hidden;
+    color:white;
+    text-align: left;
+    
+}
+
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;      
+}
+
+
+
+#top-right, #top-right-right
+{
+    width:50%;
+    height:20px;
+    background-color: rgba(0,0,255,0.5);
+    overflow:hidden;
+    color:white;
+    text-align: right;
+    
+}
+
+#left 
+{
+    overflow:auto;
+    height:100%;
+}
+
+
+/* stylize text box */
+#q
+{
+    /* override typeahead.js's transparent background */
+    background-color: #ffffff !important;
+
+    /* text box's width */
+    width: 300px;
+}
+
+/* stylize places' labels */
+.label
+{
+    /* small, black text */
+    color: #000000;
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: bold;
+
+    /* don't let places' labels wrap onto multiple lines */
+    white-space: nowrap;
+}
+
+/* stylize info window */
+#info
+{
+    /* no margin around this element */
+    margin: 0;
+
+    /* should be at least this width */
+    min-width: 200px;
+
+    /* allow scrollbars as needed */
+    overflow: auto;
+}
+#info ul
+{
+    margin-bottom: 0;
+}
+
+
+
+ .labels {
+     color: black;
+     background-color: white;
+     font-family: "Lucida Grande", "Arial", sans-serif;
+     font-size: 14px;
+     text-align: center;
+     padding: 3px;
+     border: 1px;
+     white-space: nowrap;
+   }
+   
+   #modul1, #modul2, #modul3, #modul4, #modul5, #modul6, #modul11, #modul12, #modul13, #modul14, #modul15, #modul16, #modul17, #modul18, #modul21, #modul22, #modul23, #modul24, #modul26, #modul27, #modul28, #modul29, #modul31, #modul33, #modul34, #modul35, #modul43, #modul44  {
+       background-color: rgba(255,255,255,0.5);
+       width: 100%;
+       height: 40px;
+       border-bottom: thin solid #ff0000;
+        overflow:hidden;
+   }
+   
+ 
+ 
+ #alarm
+ {
+     position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: red;
+	height:400px;
+	width: 500px;
+	border: thick dashed yellow;
+	color: yellow;
+	text-align: center;
+	 overflow:hidden;
+	font-size: 30px;
+	display:none;
+
+ }
+ 
+ #alarm h1
+ {
+     font-size: 50px;
+ }
+ 
+ #exs
+ {
+	position: absolute;
+	top: 1px;
+	right: 1px;
+    height:20px;
+	width: 20px;
+	background-color: black;
+	color: yellow;
+	text-align:center;
+	font-size: 14px;
+	
+ }
+ 
+  iframe
+ {
+     border:none;
+     background-color: rgba(255,255,255,0.1);
+     font-family: sans-serif;
+     width:200px;
+     height:300px;
+ }
+ 
+ .phpForm
+ {
+     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	 text-align: center;
+ }
+ 
+ 
+ 
+     .phpForm button
+    {
+        padding: 5px 10px;
+        margin: 5px;
+        font-size: 1em;
+        color: white;
+        background-color: rgba(0,0,255,0.5);
+        border:none;
+        border-radius:5px;
+        box-shadow: 0 0 4px white;
+        
+    }
+    
+    .phpForm select
+    {
+        margin: 5px;
+    }
+    
+    .phpForm input[type="text"]
+    {
+        margin-bottom:7px;
+    }
+    
