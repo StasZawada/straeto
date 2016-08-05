@@ -27,6 +27,15 @@
 <?php
 
    require("../includes/config.php");
+   
+//just for proper gramar formating of results
+if (empty($_GET["direction"])) {
+$to = " ";
+}    
+else {
+$to = " to ";
+}
+
 
 // choose bus number
  if (empty($_GET["busNumber"]) && empty($_GET["name"])) {
@@ -100,7 +109,7 @@ if ($_GET["place_type"] == "busStop")
 if ($_GET["place_type"] == "otherLoc")
 {echo('
     <form action="form.php" method="get">
-chose alarm location for bus nr <strong>' . $_GET["busNumber"] .' </strong>to: <strong>'. $_GET["direction"] .' </strong>just by right-clicking on the map<br>
+chose alarm location for bus nr <strong>' . $_GET["busNumber"] .' </strong>' . $to . ' <strong>'. $_GET["direction"] .' </strong>just by right-clicking on the map<br>
 
 <br><br>
     <form action="form.php" method="get">
@@ -136,7 +145,7 @@ if ($_GET["stop"] && empty($_GET["save_new"])){
     $rows =  CS50::query("SELECT * FROM busStops WHERE id = ?",  $_GET["stop"]);
    $row = $rows[0];
    $row = array_map('utf8_encode', $row);
-    echo('you choose bus number <strong>' . $_GET["busNumber"] . '</strong> to <strong>' . $_GET["direction"] . '</strong>, alarm starts when bus will pass by <strong>' . $row["stop"] . '</strong><br><br>
+    echo('you choose bus number <strong>' . $_GET["busNumber"] . '</strong> ' . $to . ' <strong>' . $_GET["direction"] . '</strong>, alarm starts when bus will pass by <strong>' . $row["stop"] . '</strong><br><br>
     <form action="form.php" method="get">
     <button class="btn btn-default" type="submit">new alarm</button></form>
    ');
@@ -165,7 +174,7 @@ if ($_GET["stop"] && empty($_GET["save_new"])){
 
 if ($_GET["x"])
 {
-     echo('you choose bus number <strong>' . $_GET["busNumber"] . '</strong> to <strong>' . $_GET["direction"] . '</strong>, alarm starts when bus will pass by <strong>' . $_GET["name"] . '</strong><br><br>
+     echo('you choose bus number <strong>' . $_GET["busNumber"] . '</strong> ' . $to . '  <strong>' . $_GET["direction"] . '</strong>, alarm starts when bus will pass by <strong>' . $_GET["name"] . '</strong><br><br>
     <form action="form.php" method="get">
     <button class="btn btn-default" type="submit">new alarm</button></form>
    ');
